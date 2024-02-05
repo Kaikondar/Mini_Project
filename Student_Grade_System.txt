@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+      Student_Grade stu=new Student_Grade();
+      stu.menu();
+    }
+}
+class Student_Grade{
+    public static void menu(){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Please Enter the Student Count");
+        int count=sc.nextInt();
+        int i=1;
+        long max=0;
+        long avg=0;
+        long min=Integer.MAX_VALUE;
+        while(count>0){
+              System.out.println("Enter Student " + i + " Mark");
+              long mark=sc.nextLong();
+               avg+=mark;
+               max=Math.max(mark,max);
+               min=Math.min(mark,min);
+               count--;
+               i++;    
+        }
+        
+        System.out.println("First Mark: "+max);
+        System.out.println("Minimum Mark: "+min);
+        System.out.println("Average Marks: "+avg/2.0);
+    }
+} 
